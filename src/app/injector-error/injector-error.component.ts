@@ -51,18 +51,18 @@ export class InjectorErrorComponent {
   }
 
   private defineListItemElement() {
-    if (isNil(customElements.get('app-list-item'))) {
+    if (isNil(customElements.get('app-list-item-element'))) {
       const validationElement = createCustomElement(ListItemComponent, {
         injector: this._inj,
       });
-      customElements.define('app-list-item', validationElement);
+      customElements.define('app-list-item-element', validationElement);
     }
   }
 
   private createListItemElement() {
     const validationEl: NgElement & WithProperties<ListItemComponent> =
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      document.createElement('app-list-item') as any;
+      document.createElement('app-list-item-element', {}) as any;
 
     return validationEl;
   }
