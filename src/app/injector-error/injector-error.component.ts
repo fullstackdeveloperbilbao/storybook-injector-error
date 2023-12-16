@@ -46,6 +46,7 @@ export class InjectorErrorComponent {
 
   onAddItem() {
     const listItemEl = this.createListItemElement();
+    (listItemEl as any)['injector'] = this._inj;
     listItemEl.item = this.list[this.getRandomNumber(0, this.list.length - 1)];
     this.listContainer.nativeElement.appendChild(listItemEl);
   }
